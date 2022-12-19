@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import * as jerseysAPI from '../../utilities/jerseys-api';
@@ -12,7 +12,7 @@ import LeagueDetailPage from '../LeagueDetailPage/LeagueDetailPage';
 import NewLeaguePage from '../NewLeaguePage/NewLeaguePage';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import NavBar from '../../components/NavBar/NavBar';
-import './App.css';
+// import './App.css';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -21,21 +21,21 @@ export default function App() {
   const [comments, setComments] = useState([]);
   const [reviews, setReviews] = useState([]);
 
-  useEffect(() => {
-    async function fillJerseyCase() {
-      const jerseys = await jerseysAPI.index();
-      setJerseys(jerseys);
-    }
-    fillJerseyCase();
-  }, []);
+  // useEffect(() => {
+  //   async function fillJerseyCase() {
+  //     const jerseys = await jerseysAPI.index();
+  //     setJerseys(jerseys);
+  //   }
+  //   fillJerseyCase();
+  // }, []);
 
-  useEffect(() => {
-    async function openLeagues() {
-      const shops = await leaguesAPI.index();
-      setLeagues(leagues);
-    }
-    openLeagues();
-  }, []);
+  // useEffect(() => {
+  //   async function openLeagues() {
+  //     const league = await leaguesAPI.index();
+  //     setLeagues(leagues);
+  //   }
+  //   openLeagues();
+  // }, []);
   
   async function addJersey(jersey) {
     const newJersey = await jerseysAPI.create(jersey);

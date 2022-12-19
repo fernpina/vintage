@@ -12,7 +12,7 @@ export default function JerseysListPage({ jerseys, handleDeleteJersey, user }) {
     <>
       <h1>Jerseys</h1>
       <div>
-        {jerseys.map((d, idx) => {
+        {jerseys.map((j, idx) => {
           return <JerseyCard jersey={j} key={idx} handleDeleteJersey={handleDeleteJersey} />;
         })}
       </div>
