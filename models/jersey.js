@@ -5,7 +5,6 @@ const commentSchema = new Schema({
   content: {
     type: String,
   },
-  
   user: {
     type: Schema.Types.ObjectId,
     ref: 'User',
@@ -15,21 +14,23 @@ const commentSchema = new Schema({
 });
 
 const jerseySchema = new Schema({
-  team: {
+  League: {
     type: String,
   },
-  league: {
+  Team: {
     type: String,
   },
-  review: {
+  Year: {
     type: String,
   },
-  rating: {
+  Description: {
+    type: String,
+  },
+  Rating: {
     type: Number,
   },
- 
+
   comments: [commentSchema],
-  shop: String,
   user: {
     type: Schema.Types.ObjectId,
     ref: 'User',
