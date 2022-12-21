@@ -10,17 +10,17 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <nav>
-      <Link to="/jerseys">Jerseys</Link>
+      <Link to="/jerseys">Home</Link>
       &nbsp; &nbsp;
-      <Link to="/jerseys/new">Add a Jersey</Link>
+      <Link to="/jerseys/new">Add Jerseys</Link>
       &nbsp; | &nbsp;
-      <Link to="/leagues">Leagues</Link>
+      {/* <Link to="/leagues">Leagues</Link>
       &nbsp; 🏬 &nbsp;
       <Link to="/leagues/new">Add League</Link>
-      &nbsp;&nbsp;
+      &nbsp;&nbsp; */}
       <span>Welcome, {user.name}</span>
       &nbsp;&nbsp;
-      <Link to="/profile">Collections</Link>
+      <Link to="/profile">Profile</Link>
       &nbsp; &nbsp;
       <Link to="" onClick={handleLogOut}>Log Out</Link>
     </nav>

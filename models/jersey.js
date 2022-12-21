@@ -14,19 +14,19 @@ const commentSchema = new Schema({
 });
 
 const jerseySchema = new Schema({
-  League: {
+  league: {
     type: String,
   },
-  Team: {
+  team: {
     type: String,
   },
-  Year: {
+  year: {
     type: String,
   },
-  Description: {
+  description: {
     type: String,
   },
-  Rating: {
+  rating: {
     type: Number,
   },
 
