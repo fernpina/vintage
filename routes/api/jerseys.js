@@ -5,7 +5,7 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn');
 
 router.get('/', jerseysCtrl.index);
 router.post('/new', jerseysCtrl.create);
-router.post('/:id/update', ensureLoggedIn, jerseysCtrl.updateJersey);
+router.put('/:id/update', ensureLoggedIn, jerseysCtrl.updateJersey);
 router.delete('/:id', ensureLoggedIn, jerseysCtrl.delete);
 
 
