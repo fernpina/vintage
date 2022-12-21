@@ -28,28 +28,50 @@ export default function UpdateJerseyPage({ jerseys, setJerseys, }) {
 
   return(
     <>
-      <h1>Edit Jersey</h1>
-      <form onSubmit={handleSubmitEdits}>
-        <label htmlFor="input">Flavor:</label>
+       <h1>Add a New Jersey</h1>
+        <form onSubmit={handleSubmitEdits}>
+          <label htmlFor="input">Team:</label>
           <input
-            name="flavor"
+            name="Team"
             type="text"
             value={jerseyFormData.team}
             onChange={handleChange}
-            placeholder="G."
+            placeholder=""
+            required
           />
-
-          <label htmlFor="select">Type:</label>
+  
+          <label htmlFor="select">League:</label>
           <select
             name="type"
-            value={jerseyFormData.league}
+            value={jerseyFormData.name}
             onChange={handleChange}
+            required
           >
             <option value="NBA">NBA</option>
             <option value="NFL">NFL</option>
+            <option value="MLB">MLB</option>
+            <option value="NHL">NHL</option>
+            <option value="MLS">MLS</option>
+            <option value="INTERNATIONAL">INTERNATIONAL</option>
           </select>
-
-
+  
+          <label htmlFor="textarea">Year/Era:</label>
+          <textarea
+            name="unique"
+            value={jerseyFormData.name}
+            onChange={handleChange}
+            placeholder="What year/era was this jersey used in?"
+          />
+  
+          <label htmlFor="textarea">Description:</label>
+          <textarea
+            name="Description"
+            value={jerseyFormData.name}
+            onChange={handleChange}
+            placeholder="Small description"
+            required
+          />
+  
         <button type="submit">Submit Edits</button>
       </form>
     </>
