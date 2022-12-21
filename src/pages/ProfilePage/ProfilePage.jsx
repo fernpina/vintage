@@ -9,7 +9,7 @@ export default function ProfilePage({ user }) {
         <h5>Email: {user.email}</h5>
       </div>
       <div>
-        <h2>Lakers</h2>
+        <h2></h2>
       </div>
     </>
   );

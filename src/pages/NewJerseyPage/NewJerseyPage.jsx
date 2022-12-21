@@ -30,27 +30,27 @@ export default function NewJerseyPage({ addJersey }) {
           <input
             name="Team"
             type="text"
-            value={newJersey.team}
+            value={newJersey.name}
             onChange={(evt) => setNewJersey({ ...newJersey, [evt.target.name]: evt.target.value })}
-            placeholder="Glazed, Chocolate, etc."
+            placeholder="."
             required
           />
   
           <label htmlFor="select">League:</label>
           <select
             name="type"
-            value={newJersey.type}
+            value={newJersey.name}
             onChange={(evt) => setNewJersey({ ...newJersey, [evt.target.name]: evt.target.value })}
             required
           >
-            <option value="Dough">Dough</option>
-            <option value="Cake">Cake</option>
+            <option value="NBA">NBA</option>
+            <option value="NFL">NFL</option>
           </select>
   
           <label htmlFor="textarea">Year/Era:</label>
           <textarea
             name="unique"
-            value={newJersey.year}
+            value={newJersey.name}
             onChange={(evt) => setNewJersey({ ...newJersey, [evt.target.name]: evt.target.value })}
             placeholder="What year/era was this jersey used in?"
           />
@@ -58,7 +58,7 @@ export default function NewJerseyPage({ addJersey }) {
           <label htmlFor="textarea">Description:</label>
           <textarea
             name="Description"
-            value={newJersey.description}
+            value={newJersey.name}
             onChange={(evt) => setNewJersey({ ...newJersey, [evt.target.name]: evt.target.value })}
             placeholder="Small description"
             required
@@ -78,7 +78,7 @@ export default function NewJerseyPage({ addJersey }) {
             <option value="5">5</option>
           </select>
   
-          <button type="submit">Add to Donut Case</button>
+          <button type="submit">Add to collection</button>
         </form>
       </>
     );

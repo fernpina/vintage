@@ -1,12 +1,15 @@
 import { Link, useNavigate } from 'react-router-dom';
 import './JerseyCard.css';
 
-export default function JerseyCard({ jersey, handleDeleteJersey, user }) {
-  const navigate = useNavigate();
-  const date = new Date(jersey.createdAt);
-  const dateOptions = {year: 'numeric', month: 'short', day: 'numeric'};
+export default function JerseyCard({ jersey, handleDeleteJersey, dateOptions, date }) {
+    const navigate = useNavigate();
   
-  return(
+    function getDate(item) {
+      const date = new Date(item);
+      return date.toDateString();
+    }
+ 
+      return(
     <>
       <Link to={`/jerseys/${jersey._id}`}>
         <div>
