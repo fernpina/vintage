@@ -29,7 +29,9 @@ const jerseySchema = new Schema({
   rating: {
     type: Number,
   },
-
+  image: {
+    type: String
+  },
   comments: [commentSchema],
   user: {
     type: Schema.Types.ObjectId,

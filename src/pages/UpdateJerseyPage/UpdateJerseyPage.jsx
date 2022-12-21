@@ -28,13 +28,13 @@ export default function UpdateJerseyPage({ jerseys, setJerseys, }) {
 
   return(
     <>
-       <h1>Add a New Jersey</h1>
+       <h1>Edit Jersey</h1>
         <form onSubmit={handleSubmitEdits}>
           <label htmlFor="input">Team:</label>
           <input
             name="Team"
             type="text"
-            value={jerseyFormData.team}
+            value={jerseyFormData.name}
             onChange={handleChange}
             placeholder=""
             required

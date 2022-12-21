@@ -4,10 +4,11 @@ import './NewJerseyPage.css';
 export default function NewJerseyPage({ addJersey }) {
     const [newJersey, setNewJersey] = useState({
       team: "",
-      league: "",
+      league: "NBA",
       year: "",
       description: "",
       rating: 3,
+      image: ""
     });
     
     function handleAddJersey(evt) {
@@ -15,32 +16,48 @@ export default function NewJerseyPage({ addJersey }) {
       addJersey(newJersey);
       setNewJersey({
         team: "",
-        league: "",
+        league: "NBA",
         year: "",
         description: "",
         rating: 3,
+        image: ""
       });
     }
+
+    function handleChange(evt) {
+        const jersey= {...newJersey, [evt.target.name]:evt.target.value}
+        setNewJersey(jersey)
+    }
   
+    console.log(newJersey)
     return (
       <>
         <h1>Add a New Jersey</h1>
         <form onSubmit={handleAddJersey}>
-          <label htmlFor="input">Team:</label>
+          <label htmlFor="input">Image:</label>
           <input
-            name="Team"
+            name="image"
             type="text"
             value={newJersey.name}
-            onChange={(evt) => setNewJersey({ ...newJersey, [evt.target.name]: evt.target.value })}
+            onChange={handleChange}
+            placeholder=""
+            required
+          />
+          <label htmlFor="input">Team:</label>
+          <input
+            name="team"
+            type="text"
+            value={newJersey.name}
+            onChange={handleChange}
             placeholder=""
             required
           />
   
           <label htmlFor="select">League:</label>
           <select
-            name="type"
+            name="league"
             value={newJersey.name}
-            onChange={(evt) => setNewJersey({ ...newJersey, [evt.target.name]: evt.target.value })}
+            onChange={handleChange}
             required
           >
             <option value="NBA">NBA</option>
@@ -53,17 +70,17 @@ export default function NewJerseyPage({ addJersey }) {
   
           <label htmlFor="textarea">Year/Era:</label>
           <textarea
-            name="unique"
+            name="year"
             value={newJersey.name}
-            onChange={(evt) => setNewJersey({ ...newJersey, [evt.target.name]: evt.target.value })}
+            onChange={handleChange}
             placeholder="What year/era was this jersey used in?"
           />
   
           <label htmlFor="textarea">Description:</label>
           <textarea
-            name="Description"
+            name="description"
             value={newJersey.name}
-            onChange={(evt) => setNewJersey({ ...newJersey, [evt.target.name]: evt.target.value })}
+            onChange={handleChange}
             placeholder="Small description"
             required
           />

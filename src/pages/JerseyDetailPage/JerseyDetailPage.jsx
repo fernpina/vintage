@@ -60,13 +60,14 @@ export default function JerseyDetailPage({ jerseys, setJerseys, user }) {
     <>
       <div>
         <h1>{jerseyDetail.name}</h1>
-        <p>Team: {jerseyDetail.name}</p>
-        <p>League: {jerseyDetail.name}</p>
+        <img src= {jerseyDetail.image}></img>
+        <p>Team: {jerseyDetail.team}</p>
+        <p>League: {jerseyDetail.league}</p>
         <div>
           <h6>Description:</h6>
-          {jerseyDetail.name}
+          {jerseyDetail.description}
         </div>
-        <h4>Rating: {jerseyDetail.name}</h4>
+        <h4>Rating: {jerseyDetail.rating}</h4>
         <div>
           <h5>Review:</h5>
           <p>{jerseyDetail.review}</p>

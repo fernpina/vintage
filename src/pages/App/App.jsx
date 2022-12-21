@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, useNavigate, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import * as jerseysAPI from '../../utilities/jerseys-api';
 import AuthPage from '../AuthPage/AuthPage';
@@ -16,18 +16,19 @@ import NavBar from '../../components/NavBar/NavBar';
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [jerseys, setJerseys] = useState([]);
-
+  const navigate= useNavigate()
   useEffect(() => {
     async function fillJerseyCase() {
-      const jerseys = await jerseysAPI.index();
-      setJerseys(jerseys);
+      const allJerseys = await jerseysAPI.index();
+      setJerseys(allJerseys);
     }
     fillJerseyCase();
   }, []);
 
   async function addJersey(jersey) {
     const allJerseys = await jerseysAPI.create(jersey);
-    setJerseys(allJerseys);
+    setJerseys([...jerseys, allJerseys]);
+    navigate('/jerseys')
   }
 
   async function myJerseys(id) {

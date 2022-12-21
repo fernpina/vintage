@@ -1,4 +1,4 @@
-const Donut = require('../../models/jersey');
+const Jersey = require('../../models/jersey');
 
 module.exports = {
   index,
