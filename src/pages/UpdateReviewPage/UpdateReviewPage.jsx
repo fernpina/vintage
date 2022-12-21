@@ -23,7 +23,7 @@ export default function UpdateReviewPage({ review, handleUpdateReview, showEditR
             name="content"
             value={reviewFormData.content}
             onChange={handleChange}
-            placeholder="How were the donuts and your experience?"
+            placeholder=""
           />
 
           <label htmlFor="select">Rating:</label>

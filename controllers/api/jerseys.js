@@ -1,4 +1,4 @@
-const Donut = require('../../models/jersey');
+const Jersey = require('../../models/jersey');
 
 module.exports = {
   index,
@@ -9,19 +9,15 @@ module.exports = {
 
 async function index(req, res) {
   const jerseys = await Jersey.find({});
-  res.status(200).json(jerseys);
+  res.json(jerseys);
 }
 
 async function create(req, res) {
-  try {
+    console.log('hello')
     req.body.user = req.user._id;
     const jersey = await Jersey.create(req.body);
-    jersey.save();
     res.json(jersey);
-  } catch (err) {
-    console.log(err);
-    res.status(400).json(err);
-  }
+ 
 }
 
 async function updateJersey(req, res, next) {

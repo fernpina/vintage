@@ -59,14 +59,14 @@ export default function JerseyDetailPage({ jerseys, setJerseys, user }) {
   return(
     <>
       <div>
-        <h1>{jerseyDetail.team}</h1>
-        <p>Type: {jerseyDetail.league}</p>
-        <p>Sprinkles: {jerseyDetail.year}</p>
+        <h1>{jerseyDetail.name}</h1>
+        <p>Team: {jerseyDetail.team}</p>
+        <p>League: {jerseyDetail.league}</p>
         <div>
-          <h6>Other Qualities:</h6>
-          {jerseyDetail.description}
+          <h6>Description:</h6>
+          {jerseyDetail.name}
         </div>
-        <h4>Rating: {jerseyDetail.rating}</h4>
+        <h4>Rating: {jerseyDetail.name}</h4>
         <div>
           <h5>Review:</h5>
           <p>{jerseyDetail.review}</p>
@@ -79,17 +79,17 @@ export default function JerseyDetailPage({ jerseys, setJerseys, user }) {
           <CommentCard jerseyDetail={jerseyDetail} comment={comment} key={comment._id} handleUpdateComment={handleUpdateComment} handleDeleteComment={handleDeleteComment} user={user} />
         ))}
       </div>
-      <h4>Comment on This Donut:</h4>
+      <h4>Comments:</h4>
       <div>
         <form onSubmit={handleAddComment}>
           <textarea
             name="content"
             value={newComment.content}
             onChange={(evt) => setNewComment({ content: evt.target.value })}
-            placeholder="What are your thoughts?"
+            placeholder="Thoughts?"
             required
           />
-          <button type="submit">Enrich Dialogue</button>
+          <button type="submit">Submit Comment</button>
         </form>
       </div>
     </>

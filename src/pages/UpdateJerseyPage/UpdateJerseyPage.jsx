@@ -36,7 +36,7 @@ export default function UpdateJerseyPage({ jerseys, setJerseys, }) {
             type="text"
             value={jerseyFormData.team}
             onChange={handleChange}
-            placeholder="Glazed, Chocolate, etc."
+            placeholder="G."
           />
 
           <label htmlFor="select">Type:</label>
@@ -49,37 +49,7 @@ export default function UpdateJerseyPage({ jerseys, setJerseys, }) {
             <option value="NFL">NFL</option>
           </select>
 
-          {/* <label htmlFor="textarea">Year/Era:</label>
-          <textarea
-            name="unique"
-            value={newJersey.year}
-            onChange={(evt) => setNewJersey({ ...newJersey, [evt.target.name]: evt.target.value })}
-            placeholder="What year/era was this jersey used in?"
-          />
-  
-          <label htmlFor="textarea">Description:</label>
-          <textarea
-            name="Description"
-            value={setJersey.description}
-            onChange={(evt) => setNewJersey({ ...newJersey, [evt.target.name]: evt.target.value })}
-            placeholder="Small description"
-            required
-          />
-  
-          <label htmlFor="select">Rating:</label>
-          <select
-            name="rating"
-            value={setJersey.rating}
-            onChange={(evt) => setNewJersey({ ...newJersey, [evt.target.name]: evt.target.value })}
-            required
-          >
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select> */}
-  
+
         <button type="submit">Submit Edits</button>
       </form>
     </>

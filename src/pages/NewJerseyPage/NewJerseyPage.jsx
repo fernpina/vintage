@@ -32,7 +32,7 @@ export default function NewJerseyPage({ addJersey }) {
             type="text"
             value={newJersey.name}
             onChange={(evt) => setNewJersey({ ...newJersey, [evt.target.name]: evt.target.value })}
-            placeholder="."
+            placeholder=""
             required
           />
   
@@ -45,6 +45,10 @@ export default function NewJerseyPage({ addJersey }) {
           >
             <option value="NBA">NBA</option>
             <option value="NFL">NFL</option>
+            <option value="MLB">MLB</option>
+            <option value="NHL">NHL</option>
+            <option value="MLS">MLS</option>
+            <option value="INTERNATIONAL">INTERNATIONAL</option>
           </select>
   
           <label htmlFor="textarea">Year/Era:</label>
@@ -63,20 +67,6 @@ export default function NewJerseyPage({ addJersey }) {
             placeholder="Small description"
             required
           />
-  
-          <label htmlFor="select">Rating:</label>
-          <select
-            name="rating"
-            value={newJersey.rating}
-            onChange={(evt) => setNewJersey({ ...newJersey, [evt.target.name]: evt.target.value })}
-            required
-          >
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
   
           <button type="submit">Add to collection</button>
         </form>
